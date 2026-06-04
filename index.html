@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rasa Nusantara | Kuliner Khas Indonesia</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-wrapper">
+      <a href="#" class="logo">Rasa<span>Nusantara</span></a>
+
+      <button class="menu-toggle" id="menuToggle">☰</button>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="#home">Home</a>
+        <a href="#kuliner">Kuliner</a>
+        <a href="#kategori">Kategori</a>
+        <a href="#tentang">Tentang</a>
+        <a href="#kontak">Kontak</a>
+        <button class="dark-btn" id="darkModeBtn">🌙</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-wrapper">
+        <div class="hero-text">
+          <p class="badge">Kuliner Khas Indonesia</p>
+          <h1>Jelajahi Cita Rasa Nusantara</h1>
+          <p>
+            Dari rendang yang legendaris sampai papeda yang unik, setiap makanan punya
+            cerita, budaya, dan rasa yang bikin Indonesia susah ditandingi.
+          </p>
+          <div class="hero-actions">
+            <a href="#kuliner" class="btn primary">Lihat Kuliner</a>
+            <a href="#kontak" class="btn secondary">Saran Makanan</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="food-emoji">🍛</div>
+          <h3>Menu Hari Ini</h3>
+          <p>Rendang Padang</p>
+          <span>Makanan berat • Sumatera</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="container stats-wrapper">
+        <div>
+          <h2>8+</h2>
+          <p>Kuliner Populer</p>
+        </div>
+        <div>
+          <h2>5</h2>
+          <p>Kategori Daerah</p>
+        </div>
+        <div>
+          <h2>100%</h2>
+          <p>HTML CSS JS Tipis</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="kuliner">
+      <div class="container">
+        <div class="section-heading">
+          <p class="badge">Daftar Kuliner</p>
+          <h2>Makanan Khas Pilihan</h2>
+          <p>
+            Beberapa makanan khas Indonesia yang terkenal dan cocok ditampilkan
+            dalam website sederhana.
+          </p>
+        </div>
+
+        <div class="filter-buttons" id="kategori">
+          <button class="filter-btn active" data-filter="semua">Semua</button>
+          <button class="filter-btn" data-filter="sumatera">Sumatera</button>
+          <button class="filter-btn" data-filter="jawa">Jawa</button>
+          <button class="filter-btn" data-filter="kalimantan">Kalimantan</button>
+          <button class="filter-btn" data-filter="sulawesi">Sulawesi</button>
+          <button class="filter-btn" data-filter="papua">Papua</button>
+        </div>
+
+        <div class="food-grid">
+          <article class="food-card" data-category="sumatera">
+            <div class="food-img">🥘</div>
+            <div class="food-content">
+              <span>Sumatera Barat</span>
+              <h3>Rendang</h3>
+              <p>Daging berbumbu rempah yang dimasak lama hingga kaya rasa dan harum.</p>
+            </div>
+          </article>
+
+          <article class="food-card" data-category="jawa">
+            <div class="food-img">🍲</div>
+            <div class="food-content">
+              <span>Yogyakarta</span>
+              <h3>Gudeg</h3>
+              <p>Olahan nangka muda bercita rasa manis, biasanya disajikan dengan nasi.</p>
+            </div>
+          </article>
+
+          <article class="food-card" data-category="sumatera">
+            <div class="food-img">🍤</div>
+            <div class="food-content">
+              <span>Palembang</span>
+              <h3>Pempek</h3>
+              <p>Makanan berbahan ikan dan sagu, disajikan dengan kuah cuko yang khas.</p>
+            </div>
+          </article>
+
+          <article class="food-card" data-category="jawa">
+            <div class="food-img">🍜</div>
+            <div class="food-content">
+              <span>Jakarta</span>
+              <h3>Soto Betawi</h3>
+              <p>Soto gurih dengan kuah santan atau susu, berisi daging dan rempah.</p>
+            </div>
+          </article>
+
+          <article class="food-card" data-category="jawa">
+            <div class="food-img">🍚</div>
+            <div class="food-content">
+              <span>Cirebon</span>
+              <h3>Nasi Jamblang</h3>
+              <p>Nasi khas Cirebon dengan lauk beragam, dibungkus daun jati.</p>
+            </div>
+          </article>
+
+          <article class="food-card" data-category="papua">
+            <div class="food-img">🥣</div>
+            <div class="food-content">
+              <span>Papua</span>
+              <h3>Papeda</h3>
+              <p>Makanan berbahan sagu dengan tekstur unik, biasanya dimakan dengan ikan kuah kuning.</p>
+            </div>
+          </article>
+
+          <article class="food-card" data-category="jawa">
+            <div class="food-img">🍛</div>
+            <div class="food-content">
+              <span>Jawa Timur</span>
+              <h3>Rawon</h3>
+              <p>Sup daging berkuah hitam dari kluwek, rasanya gurih dan khas.</p>
+            </div>
+          </article>
+
+          <article class="food-card" data-category="sulawesi">
+            <div class="food-img">🍖</div>
+            <div class="food-content">
+              <span>Sulawesi Selatan</span>
+              <h3>Coto Makassar</h3>
+              <p>Hidangan daging berkuah rempah, biasanya disajikan dengan ketupat.</p>
+            </div>
+          </article>
+
+          <article class="food-card" data-category="kalimantan">
+            <div class="food-img">🐟</div>
+            <div class="food-content">
+              <span>Kalimantan Selatan</span>
+              <h3>Soto Banjar</h3>
+              <p>Soto ayam khas Banjar dengan aroma rempah dan kuah yang segar.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about" id="tentang">
+      <div class="container about-wrapper">
+        <div>
+          <p class="badge">Tentang Website</p>
+          <h2>Mengenalkan Kuliner Indonesia Lewat Web Sederhana</h2>
+          <p>
+            Rasa Nusantara dibuat sebagai contoh website statis berbasis HTML, CSS,
+            dan JavaScript sederhana. Website ini cocok untuk tugas kelompok karena
+            setiap bagian bisa dibagi dengan jelas.
+          </p>
+        </div>
+
+        <div class="about-list">
+          <div>
+            <h3>🍽️ Mudah Dipahami</h3>
+            <p>Konten sederhana dan layout rapi.</p>
+          </div>
+          <div>
+            <h3>🎨 Visual Menarik</h3>
+            <p>Warna hangat khas kuliner tradisional.</p>
+          </div>
+          <div>
+            <h3>⚙️ JS Ringan</h3>
+            <p>Filter, dark mode, dan validasi form.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="kontak">
+      <div class="container contact-wrapper">
+        <div>
+          <p class="badge">Kontak</p>
+          <h2>Punya Saran Kuliner?</h2>
+          <p>
+            Masukkan makanan khas daerah yang menurutmu wajib masuk ke daftar.
+            Tenang, ini cuma demo, jadi belum tersambung database. Peradaban belum sejauh itu.
+          </p>
+        </div>
+
+        <form class="contact-form" id="foodForm">
+          <label>
+            Nama
+            <input type="text" id="nama" placeholder="Masukkan nama kamu" />
+          </label>
+
+          <label>
+            Asal Daerah
+            <input type="text" id="daerah" placeholder="Contoh: Cirebon" />
+          </label>
+
+          <label>
+            Nama Makanan
+            <input type="text" id="makanan" placeholder="Contoh: Empal Gentong" />
+          </label>
+
+          <label>
+            Pesan
+            <textarea id="pesan" rows="4" placeholder="Tulis pesan singkat"></textarea>
+          </label>
+
+          <button type="submit" class="btn primary full">Kirim Saran</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Rasa Nusantara. Dibuat dengan HTML, CSS, dan sedikit JS.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
