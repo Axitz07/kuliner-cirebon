@@ -4,17 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - Rasa Nusantara Cirebon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/pages/dashboard.css">
 </head>
 <body>
-    <!-- Header Navigation -->
     <header class="dashboard-header">
         <div class="header-container">
             <div class="logo-section">
                 <div class="logo-circle">
                     <span class="logo-text">RN</span>
                 </div>
-                <h1 class="site-title">Rasa Nusantara</h1>
+                <span class="site-title">Rasa Nusantara</span>
             </div>
 
             <nav class="main-nav">
@@ -25,10 +27,7 @@
 
             <div class="user-section">
                 <span class="welcome-text">Halo, <strong id="userName">User</strong></span>
-                <button class="btn-logout" id="logoutBtn">
-                    <span class="icon">🚪</span>
-                    Keluar
-                </button>
+                <button class="btn-logout" id="logoutBtn">Keluar</button>
             </div>
 
             <button class="mobile-menu-toggle" id="mobileMenuToggle">
@@ -37,66 +36,54 @@
         </div>
     </header>
 
-    <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
         <nav class="mobile-nav">
             <a href="#" class="nav-link active">Dashboard</a>
             <a href="#" class="nav-link">Katalog</a>
             <a href="#" class="nav-link">Tentang</a>
-            <button class="btn-logout-mobile" id="logoutBtnMobile">
-                <span class="icon">🚪</span>
-                Keluar
-            </button>
+            <button class="btn-logout-mobile" id="logoutBtnMobile">Keluar</button>
         </nav>
     </div>
 
-    <!-- Hero Section -->
     <section class="hero-section">
         <div class="batik-overlay"></div>
         <div class="hero-content">
-            <h2 class="hero-title">Jelajahi Kuliner Khas Cirebon</h2>
-            <p class="hero-subtitle">Nikmati kekayaan cita rasa tradisional yang menggugah selera</p>
-            
-            <!-- Search Bar -->
+            <h2 class="hero-title">Kuliner Khas Cirebon</h2>
+            <p class="hero-subtitle">Dari nasi jamblang di atas daun jati sampai empal gentong yang dimasak dalam gentong tanah liat.</p>
             <div class="search-container">
                 <div class="search-wrapper">
-                    <span class="search-icon">🔍</span>
-                    <input type="text" id="searchInput" placeholder="Cari makanan khas Cirebon..." class="search-input">
+                    <span class="search-icon">&#x2315;</span>
+                    <input type="text" id="searchInput" placeholder="Cari makanan..." class="search-input">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Stats Section -->
     <section class="stats-section">
         <div class="container">
             <div class="stats-grid">
                 <div class="stat-card">
-                    <div class="stat-icon">🍜</div>
                     <div class="stat-content">
                         <h3 class="stat-number" id="totalMakanan">0</h3>
-                        <p class="stat-label">Makanan Khas</p>
+                        <p class="stat-label">Makanan terdokumentasi</p>
                     </div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-icon">📍</div>
                     <div class="stat-content">
                         <h3 class="stat-number">5+</h3>
-                        <p class="stat-label">Lokasi</p>
+                        <p class="stat-label">Lokasi di Cirebon</p>
                     </div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-icon">🏛️</div>
                     <div class="stat-content">
                         <h3 class="stat-number">100+</h3>
-                        <p class="stat-label">Tahun Sejarah</p>
+                        <p class="stat-label">Tahun tradisi kuliner</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Filter Section -->
     <section class="filter-section">
         <div class="container">
             <h2 class="section-title">Katalog Makanan</h2>
@@ -110,22 +97,17 @@
         </div>
     </section>
 
-    <!-- Food Catalog Section -->
     <section class="catalog-section">
         <div class="container">
-            <div class="food-grid" id="foodGrid">
-                <!-- Food cards will be dynamically inserted here -->
-            </div>
-            
+            <div class="food-grid" id="foodGrid"></div>
             <div class="empty-state" id="emptyState" style="display: none;">
-                <div class="empty-icon">🍽️</div>
-                <h3>Tidak ada makanan ditemukan</h3>
-                <p>Coba cari dengan kata kunci lain</p>
+                <div class="empty-icon">&#x2205;</div>
+                <h3>Tidak ada hasil</h3>
+                <p>Coba kata kunci yang berbeda</p>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="dashboard-footer">
         <div class="container">
             <div class="footer-content">
@@ -136,23 +118,24 @@
                         </div>
                         <span class="footer-brand">Rasa Nusantara</span>
                     </div>
-                    <p class="footer-desc">Melestarikan kekayaan kuliner Cirebon untuk generasi masa depan</p>
+                    <p class="footer-desc">Mendokumentasikan kekayaan kuliner Cirebon untuk generasi mendatang.</p>
                 </div>
                 <div class="footer-right">
                     <div class="footer-links">
-                        <h4>Tautan Cepat</h4>
-                        <a href="#">Tentang Kami</a>
+                        <h4>Tautan</h4>
+                        <a href="#">Tentang</a>
                         <a href="#">Kontak</a>
                         <a href="#">FAQ</a>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Rasa Nusantara Cirebon. Semua hak dilindungi.</p>
+                <p>&copy; 2026 Rasa Nusantara Cirebon.</p>
             </div>
         </div>
     </footer>
 
+    <script src="js/data/foods.js"></script>
     <script src="js/pages/dashboard.js"></script>
 </body>
 </html>
