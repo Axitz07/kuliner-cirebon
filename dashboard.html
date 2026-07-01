@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard — Katalog Kuliner Cirebon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body class="app-body">
+
+<!-- Checkbox hack: sidebar toggle tanpa JS -->
+<input type="checkbox" id="sidebar-toggle" class="sidebar-toggle-input">
+
+<div class="app-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <!-- Tombol X tutup sidebar -->
+        <label for="sidebar-toggle" class="sidebar-close-btn" title="Tutup sidebar">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </label>
+
+        <div class="sidebar-header">
+            <img src="boled great.jpeg" alt="Logo" class="sidebar-logo-img">
+            <div class="sidebar-brand">
+                <span class="sidebar-brand-name">Rasa Nusantara</span>
+                <span class="sidebar-brand-sub">Katalog Kuliner Cirebon</span>
+            </div>
+        </div>
+
+        <div class="sidebar-profile">
+            <div class="avatar">A</div>
+            <div class="profile-info">
+                <span class="profile-name">Hallo, Admin</span>
+                <span class="profile-role">Kurator Budaya</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="nav-item active">
+                <span class="nav-icon">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                </span>
+                <span>Beranda</span>
+            </a>
+            <a href="data-master.html" class="nav-item">
+                <span class="nav-icon">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+                </span>
+                <span>Data Master Kuliner</span>
+            </a>
+            <a href="#" class="nav-item">
+                <span class="nav-icon">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </span>
+                <span>Rekomendasi Kuliner</span>
+            </a>
+            <a href="#" class="nav-item">
+                <span class="nav-icon">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </span>
+                <span>Peta Lokasi Wisata</span>
+            </a>
+            <a href="#" class="nav-item">
+                <span class="nav-icon">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                </span>
+                <span>Tentang Kami</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <a href="index.html" class="sidebar-logout">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+                Logout
+            </a>
+        </div>
+    </aside>
+
+    <!-- Overlay untuk tutup sidebar saat klik di luar -->
+    <label for="sidebar-toggle" class="sidebar-overlay"></label>
+
+    <!-- MAIN -->
+    <div class="main-area">
+        <header class="topbar">
+            <div class="topbar-left">
+                <!-- Tombol hamburger buka sidebar -->
+                <label for="sidebar-toggle" class="sidebar-open-btn" title="Buka sidebar">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+                </label>
+                <div>
+                    <h1 class="topbar-title">Beranda</h1>
+                    <span class="topbar-breadcrumb">Dashboard / Beranda</span>
+                </div>
+            </div>
+            <div class="topbar-right">
+                <span class="topbar-date">Rabu, 1 Juli 2026</span>
+                <a href="index.html" class="btn-logout-top">Logout</a>
+            </div>
+        </header>
+
+        <main class="content">
+
+            <!-- Stat Cards -->
+            <section class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon stat-icon--gold">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2h18l-2 7H5z"/><path d="M5 9c0 5.523 4.477 10 7 13 2.523-3 7-7.477 7-13"/></svg>
+                    </div>
+                    <div class="stat-body">
+                        <span class="stat-label">Total Kuliner</span>
+                        <span class="stat-value">25</span>
+                        <span class="stat-note">Terdaftar di katalog</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon stat-icon--green">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </div>
+                    <div class="stat-body">
+                        <span class="stat-label">Lokasi Wisata</span>
+                        <span class="stat-value">12</span>
+                        <span class="stat-note">Tersebar di Cirebon</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon stat-icon--blue">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                    </div>
+                    <div class="stat-body">
+                        <span class="stat-label">Resep Tersimpan</span>
+                        <span class="stat-value">18</span>
+                        <span class="stat-note">Warisan leluhur</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon stat-icon--red">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                    </div>
+                    <div class="stat-body">
+                        <span class="stat-label">Rekomendasi</span>
+                        <span class="stat-value">9</span>
+                        <span class="stat-note">Pilihan terpopuler</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Info Strip -->
+            <section class="info-strip">
+                <div class="info-strip-item">
+                    <span class="info-strip-label">Terakhir diperbarui</span>
+                    <span class="info-strip-value">1 Juli 2026</span>
+                </div>
+                <div class="info-strip-divider"></div>
+                <div class="info-strip-item">
+                    <span class="info-strip-label">Kurator aktif</span>
+                    <span class="info-strip-value">Admin</span>
+                </div>
+                <div class="info-strip-divider"></div>
+                <div class="info-strip-item">
+                    <span class="info-strip-label">Status katalog</span>
+                    <span class="info-strip-value info-strip-badge">Aktif &amp; Terpublikasi</span>
+                </div>
+                <div class="info-strip-divider"></div>
+                <div class="info-strip-item">
+                    <span class="info-strip-label">Kota cakupan</span>
+                    <span class="info-strip-value">Kota &amp; Kab. Cirebon</span>
+                </div>
+            </section>
+
+            <!-- Welcome Banner -->
+            <section class="welcome-banner">
+                <div class="welcome-banner-text">
+                    <h2>Selamat Datang di Katalog Kuliner Cirebon</h2>
+                    <p>Dokumentasi lengkap kuliner tradisional khas Cirebon — dari Empal Gentong hingga Nasi Lengko. Jelajahi sejarah, resep, dan lokasi wisata kuliner autentik.</p>
+                    <a href="data-master.html" class="btn-primary">Lihat Data Master Kuliner</a>
+                </div>
+                <div class="welcome-banner-img">
+                    <img src="boled great.jpeg" alt="Boled Great">
+                </div>
+            </section>
+
+            <!-- Katalog Unggulan -->
+            <section class="section">
+                <div class="section-header">
+                    <h3 class="section-title">Katalog Kuliner Unggulan</h3>
+                    <a href="data-master.html" class="section-link">Lihat semua</a>
+                </div>
+                <div class="product-grid">
+
+                    <div class="product-card">
+                        <div class="product-card-top">
+                            <img src="assets/empal-gentong.jpeg" alt="Empal Gentong" class="product-card-img">
+                            <span class="product-badge">Ikon Kota</span>
+                        </div>
+                        <div class="product-card-body">
+                            <h4>Empal Gentong</h4>
+                            <p>Kuliner legendaris Cirebon yang dimasak dalam gentong tanah liat besar menggunakan kayu bakar. Kuah santannya gurih kaya rempah dengan daging sapi empuk — disajikan hangat bersama nasi atau lontong.</p>
+                            <div class="product-meta">
+                                <span class="tag">Berkuah</span>
+                                <span class="tag">Sapi</span>
+                            </div>
+                            <div class="product-footer">
+                                <span class="product-origin">Kota Cirebon</span>
+                                <a href="detail-empal-gentong.html" class="product-detail-link">Lihat detail</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-card-top">
+                            <img src="nasi-jamblang.jpeg" alt="Nasi Jamblang" class="product-card-img">
+                            <span class="product-badge product-badge--green">Favorit</span>
+                        </div>
+                        <div class="product-card-body">
+                            <h4>Nasi Jamblang</h4>
+                            <p>Berasal dari daerah Jamblang, dahulu dibagikan kepada pekerja di masa kolonial. Nasi dibungkus daun jati agar tetap segar, disajikan dengan puluhan pilihan lauk yang memancarkan aroma khas daun jati.</p>
+                            <div class="product-meta">
+                                <span class="tag">Nasi</span>
+                                <span class="tag">Daun Jati</span>
+                            </div>
+                            <div class="product-footer">
+                                <span class="product-origin">Cirebon Timur</span>
+                                <a href="detail-nasi-jamblang.html" class="product-detail-link">Lihat detail</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-card-top">
+                            <img src="assets/lengko.jpeg" alt="Nasi Lengko" class="product-card-img">
+                            <span class="product-badge product-badge--blue">Sehat</span>
+                        </div>
+                        <div class="product-card-body">
+                            <h4>Nasi Lengko</h4>
+                            <p>Hidangan sederhana khas Cirebon berisi nasi dengan tahu, tempe, tauge, dan mentimun, disiram bumbu kacang dan kecap. Dominan bahan nabati dengan cita rasa gurih, manis, dan segar.</p>
+                            <div class="product-meta">
+                                <span class="tag">Vegan</span>
+                                <span class="tag">Terjangkau</span>
+                            </div>
+                            <div class="product-footer">
+                                <span class="product-origin">Kota Cirebon</span>
+                                <a href="detail-nasi-lengko.html" class="product-detail-link">Lihat detail</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-card-top">
+                            <img src="assets/docang.jpeg" alt="Docang" class="product-card-img">
+                        </div>
+                        <div class="product-card-body">
+                            <h4>Docang</h4>
+                            <p>Kuliner tradisional khas sarapan Cirebon. Lontong disajikan dengan daun singkong, tauge, dan kelapa parut, lalu disiram kuah berbumbu panas dan dilengkapi kerupuk renyah.</p>
+                            <div class="product-meta">
+                                <span class="tag">Sarapan</span>
+                                <span class="tag">Lontong</span>
+                            </div>
+                            <div class="product-footer">
+                                <span class="product-origin">Kota Cirebon</span>
+                                <a href="detail-docang.html" class="product-detail-link">Lihat detail</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-card-top">
+                            <img src="assets/tahu-gejrot.jpeg" alt="Tahu Gejrot" class="product-card-img">
+                        </div>
+                        <div class="product-card-body">
+                            <h4>Tahu Gejrot</h4>
+                            <p>Tahu goreng disiram bumbu cuka, gula merah, cabai, dan bawang. Perpaduan rasa manis, pedas, dan asam yang khas — cocok sebagai camilan kapan saja.</p>
+                            <div class="product-meta">
+                                <span class="tag">Jajanan</span>
+                                <span class="tag">Pedas</span>
+                            </div>
+                            <div class="product-footer">
+                                <span class="product-origin">Kota Cirebon</span>
+                                <a href="detail-tahu-gejrot.html" class="product-detail-link">Lihat detail</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-card-top">
+                            <img src="assets/mie-koclok.jpg" alt="Mie Koclok" class="product-card-img">
+                        </div>
+                        <div class="product-card-body">
+                            <h4>Mie Koclok</h4>
+                            <p>Perpaduan budaya Tionghoa dan Nusantara. Nama 'koclok' berasal dari cara mencelupkan mi ke air panas. Kuah putihnya lebih kental dari mi berkuah lainnya, dilengkapi ayam suwir, kol, tauge, dan telur.</p>
+                            <div class="product-meta">
+                                <span class="tag">Mie</span>
+                                <span class="tag">Santan</span>
+                            </div>
+                            <div class="product-footer">
+                                <span class="product-origin">Kota Cirebon</span>
+                                <a href="detail-mie-koclok.html" class="product-detail-link">Lihat detail</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+        </main>
+    </div>
+</div>
+</body>
+</html>

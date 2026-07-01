@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Master Kuliner — Katalog Kuliner Cirebon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body class="app-body">
+
+<!-- Checkbox hack: sidebar toggle tanpa JS -->
+<input type="checkbox" id="sidebar-toggle" class="sidebar-toggle-input">
+
+<div class="app-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <!-- Tombol tutup (X) di dalam sidebar -->
+        <label for="sidebar-toggle" class="sidebar-close-btn" title="Tutup sidebar">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </label>
+
+        <div class="sidebar-header">
+            <img src="boled great.jpeg" alt="Logo" class="sidebar-logo-img">
+            <div class="sidebar-brand">
+                <span class="sidebar-brand-name">Rasa Nusantara</span>
+                <span class="sidebar-brand-sub">Katalog Kuliner Cirebon</span>
+            </div>
+        </div>
+
+        <div class="sidebar-profile">
+            <div class="avatar">A</div>
+            <div class="profile-info">
+                <span class="profile-name">Hallo, Admin</span>
+                <span class="profile-role">Kurator Budaya</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="nav-item">
+                <span class="nav-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
+                <span>Beranda</span>
+            </a>
+            <a href="data-master.html" class="nav-item active">
+                <span class="nav-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg></span>
+                <span>Data Master Kuliner</span>
+            </a>
+            <a href="#" class="nav-item">
+                <span class="nav-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+                <span>Rekomendasi Kuliner</span>
+            </a>
+            <a href="#" class="nav-item">
+                <span class="nav-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+                <span>Peta Lokasi Wisata</span>
+            </a>
+            <a href="#" class="nav-item">
+                <span class="nav-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></span>
+                <span>Tentang Kami</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <a href="index.html" class="sidebar-logout">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg> Logout
+            </a>
+        </div>
+    </aside>
+
+    <!-- Overlay untuk menutup sidebar saat klik di luar -->
+    <label for="sidebar-toggle" class="sidebar-overlay"></label>
+
+    <!-- MAIN -->
+    <div class="main-area">
+
+        <!-- HEADER / TOPBAR -->
+        <header class="topbar">
+            <div class="topbar-left">
+                <!-- Tombol buka sidebar (hamburger) -->
+                <label for="sidebar-toggle" class="sidebar-open-btn" title="Buka sidebar">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+                </label>
+                <div>
+                    <h1 class="topbar-title">Data Master Kuliner</h1>
+                    <span class="topbar-breadcrumb">Dashboard / Data Master Kuliner</span>
+                </div>
+            </div>
+            <div class="topbar-right">
+                <span class="topbar-date">Rabu, 1 Juli 2026</span>
+                <a href="index.html" class="btn-logout-top">Logout</a>
+            </div>
+        </header>
+
+        <!-- CONTENT -->
+        <main class="content">
+            <section class="table-section">
+                <div class="table-header">
+                    <div class="table-header-left">
+                        <h2 class="table-title">Daftar Kuliner Cirebon</h2>
+                        <p class="table-subtitle">Total <strong>25</strong> data kuliner terdaftar</p>
+                    </div>
+                    <div class="table-header-right">
+                        <a href="#" class="btn-tambah"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg> Tambah Data</a>
+                    </div>
+                </div>
+
+                <div class="table-wrapper">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Nama Kuliner</th>
+                                <th>Kategori</th>
+                                <th>Bahan Utama</th>
+                                <th>Asal Daerah</th>
+                                <th>Harga</th>
+                                <th>Status</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                <tr>
+                                    <td class="td-no">1</td>
+                                    <td class="td-name">
+                                        <span class="td-cat-icon td-cat-icon--berkuah"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 12c0-2.21 1.79-4 4-4s4 1.79 4 4"/><line x1="12" y1="16" x2="12" y2="12"/></svg></span>
+                                        <span>Empal Gentong</span>
+                                    </td>
+                                    <td><span class="badge badge-berkuah">Berkuah</span></td>
+                                    <td>Daging Sapi</td>
+                                    <td>Kota Cirebon</td>
+                                    <td class="td-price">Rp 25.000</td>
+                                    <td><span class="status status-aktif">Aktif</span></td>
+                                    <td class="td-aksi">
+                                        <a href="#" class="btn-edit"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> Edit</a>
+                                        <a href="#" class="btn-hapus"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg> Hapus</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="td-no">2</td>
+                                    <td class="td-name">
+                                        <span class="td-cat-icon td-cat-icon--nasi"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg></span>
+                                        <span>Nasi Jamblang</span>
+                                    </td>
+                                    <td><span class="badge badge-nasi">Nasi</span></td>
+                                    <td>Nasi + Lauk Pauk</td>
+                                    <td>Cirebon Timur</td>
+                                    <td class="td-price">Rp 15.000</td>
+                                    <td><span class="status status-aktif">Aktif</span></td>
+                                    <td class="td-aksi">
+                                        <a href="#" class="btn-edit"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> Edit</a>
+                                        <a href="#" class="btn-hapus"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg> Hapus</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="td-no">3</td>
+                                    <td class="td-name">
+                                        <span class="td-cat-icon td-cat-icon--nasi"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg></span>
+                                        <span>Nasi Lengko</span>
+                                    </td>
+                                    <td><span class="badge badge-nasi">Nasi</span></td>
+                                    <td>Nasi + Tahu Tempe</td>
+                                    <td>Kota Cirebon</td>
+                                    <td class="td-price">Rp 10.000</td>
+                                    <td><span class="status status-aktif">Aktif</span></td>
+                                    <td class="td-aksi">
+                                        <a href="#" class="btn-edit"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> Edit</a>
+                                        <a href="#" class="btn-hapus"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg> Hapus</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="td-no">4</td>
+                                    <td class="td-name">
+                                        <span class="td-cat-icon td-cat-icon--berkuah"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 12c0-2.21 1.79-4 4-4s4 1.79 4 4"/><line x1="12" y1="16" x2="12" y2="12"/></svg></span>
+                                        <span>Docang</span>
+                                    </td>
+                                    <td><span class="badge badge-berkuah">Berkuah</span></td>
+                                    <td>Lontong + Oncom</td>
+                                    <td>Kota Cirebon</td>
+                                    <td class="td-price">Rp 12.000</td>
+                                    <td><span class="status status-aktif">Aktif</span></td>
+                                    <td class="td-aksi">
+                                        <a href="#" class="btn-edit"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> Edit</a>
+                                        <a href="#" class="btn-hapus"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg> Hapus</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="td-no">5</td>
+                                    <td class="td-name">
+                                        <span class="td-cat-icon td-cat-icon--jajanan"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></span>
+                                        <span>Tahu Gejrot</span>
+                                    </td>
+                                    <td><span class="badge badge-jajanan">Jajanan</span></td>
+                                    <td>Tahu Goreng</td>
+                                    <td>Kota Cirebon</td>
+                                    <td class="td-price">Rp 8.000</td>
+                                    <td><span class="status status-aktif">Aktif</span></td>
+                                    <td class="td-aksi">
+                                        <a href="#" class="btn-edit"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> Edit</a>
+                                        <a href="#" class="btn-hapus"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg> Hapus</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="td-no">6</td>
+                                    <td class="td-name">
+                                        <span class="td-cat-icon td-cat-icon--berkuah"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 12c0-2.21 1.79-4 4-4s4 1.79 4 4"/><line x1="12" y1="16" x2="12" y2="12"/></svg></span>
+                                        <span>Mie Koclok</span>
+                                    </td>
+                                    <td><span class="badge badge-berkuah">Berkuah</span></td>
+                                    <td>Mie + Santan</td>
+                                    <td>Kota Cirebon</td>
+                                    <td class="td-price">Rp 20.000</td>
+                                    <td><span class="status status-aktif">Aktif</span></td>
+                                    <td class="td-aksi">
+                                        <a href="#" class="btn-edit"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> Edit</a>
+                                        <a href="#" class="btn-hapus"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg> Hapus</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="td-no">7</td>
+                                    <td class="td-name">
+                                        <span class="td-cat-icon td-cat-icon--berkuah"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 12c0-2.21 1.79-4 4-4s4 1.79 4 4"/><line x1="12" y1="16" x2="12" y2="12"/></svg></span>
+                                        <span>Pedesan Entog</span>
+                                    </td>
+                                    <td><span class="badge badge-berkuah">Berkuah</span></td>
+                                    <td>Entog (Bebek)</td>
+                                    <td>Indramayu</td>
+                                    <td class="td-price">Rp 35.000</td>
+                                    <td><span class="status status-aktif">Aktif</span></td>
+                                    <td class="td-aksi">
+                                        <a href="#" class="btn-edit"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> Edit</a>
+                                        <a href="#" class="btn-hapus"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg> Hapus</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="td-no">8</td>
+                                    <td class="td-name">
+                                        <span class="td-cat-icon td-cat-icon--jajanan"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></span>
+                                        <span>Kerupuk Melarat</span>
+                                    </td>
+                                    <td><span class="badge badge-jajanan">Jajanan</span></td>
+                                    <td>Tepung Tapioka</td>
+                                    <td>Kota Cirebon</td>
+                                    <td class="td-price">Rp 3.000</td>
+                                    <td><span class="status status-aktif">Aktif</span></td>
+                                    <td class="td-aksi">
+                                        <a href="#" class="btn-edit"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> Edit</a>
+                                        <a href="#" class="btn-hapus"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg> Hapus</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="td-no">9</td>
+                                    <td class="td-name">
+                                        <span class="td-cat-icon td-cat-icon--berkuah"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 12c0-2.21 1.79-4 4-4s4 1.79 4 4"/><line x1="12" y1="16" x2="12" y2="12"/></svg></span>
+                                        <span>Bubur Sop Ayam</span>
+                                    </td>
+                                    <td><span class="badge badge-berkuah">Berkuah</span></td>
+                                    <td>Beras + Ayam</td>
+                                    <td>Kab. Cirebon</td>
+                                    <td class="td-price">Rp 18.000</td>
+                                    <td><span class="status status-aktif">Aktif</span></td>
+                                    <td class="td-aksi">
+                                        <a href="#" class="btn-edit"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> Edit</a>
+                                        <a href="#" class="btn-hapus"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg> Hapus</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="td-no">10</td>
+                                    <td class="td-name">
+                                        <span class="td-cat-icon td-cat-icon--camilan"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></span>
+                                        <span>Tape Ketan Hitam</span>
+                                    </td>
+                                    <td><span class="badge badge-camilan">Camilan</span></td>
+                                    <td>Ketan Hitam</td>
+                                    <td>Kota Cirebon</td>
+                                    <td class="td-price">Rp 5.000</td>
+                                    <td><span class="status status-aktif">Aktif</span></td>
+                                    <td class="td-aksi">
+                                        <a href="#" class="btn-edit"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> Edit</a>
+                                        <a href="#" class="btn-hapus"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg> Hapus</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="td-no">11</td>
+                                    <td class="td-name">
+                                        <span class="td-cat-icon td-cat-icon--nasi"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg></span>
+                                        <span>Nasi Bakar Cirebon</span>
+                                    </td>
+                                    <td><span class="badge badge-nasi">Nasi</span></td>
+                                    <td>Nasi + Ikan</td>
+                                    <td>Kab. Cirebon</td>
+                                    <td class="td-price">Rp 22.000</td>
+                                    <td><span class="status status-aktif">Aktif</span></td>
+                                    <td class="td-aksi">
+                                        <a href="#" class="btn-edit"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> Edit</a>
+                                        <a href="#" class="btn-hapus"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg> Hapus</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="td-no">12</td>
+                                    <td class="td-name">
+                                        <span class="td-cat-icon td-cat-icon--nasi"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg></span>
+                                        <span>Mie Kering Cirebon</span>
+                                    </td>
+                                    <td><span class="badge badge-nasi">Nasi</span></td>
+                                    <td>Mie Kering + Saus</td>
+                                    <td>Kota Cirebon</td>
+                                    <td class="td-price">Rp 20.000</td>
+                                    <td><span class="status status-nonaktif">Nonaktif</span></td>
+                                    <td class="td-aksi">
+                                        <a href="#" class="btn-edit"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> Edit</a>
+                                        <a href="#" class="btn-hapus"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg> Hapus</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="td-no">13</td>
+                                    <td class="td-name">
+                                        <span class="td-cat-icon td-cat-icon--berkuah"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 12c0-2.21 1.79-4 4-4s4 1.79 4 4"/><line x1="12" y1="16" x2="12" y2="12"/></svg></span>
+                                        <span>Pindang Bandeng</span>
+                                    </td>
+                                    <td><span class="badge badge-berkuah">Berkuah</span></td>
+                                    <td>Ikan Bandeng</td>
+                                    <td>Losari, Cirebon</td>
+                                    <td class="td-price">Rp 30.000</td>
+                                    <td><span class="status status-aktif">Aktif</span></td>
+                                    <td class="td-aksi">
+                                        <a href="#" class="btn-edit"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> Edit</a>
+                                        <a href="#" class="btn-hapus"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg> Hapus</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="td-no">14</td>
+                                    <td class="td-name">
+                                        <span class="td-cat-icon td-cat-icon--camilan"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></span>
+                                        <span>Rujak Kangkung</span>
+                                    </td>
+                                    <td><span class="badge badge-camilan">Camilan</span></td>
+                                    <td>Kangkung + Petis</td>
+                                    <td>Kota Cirebon</td>
+                                    <td class="td-price">Rp 8.000</td>
+                                    <td><span class="status status-aktif">Aktif</span></td>
+                                    <td class="td-aksi">
+                                        <a href="#" class="btn-edit"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> Edit</a>
+                                        <a href="#" class="btn-hapus"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg> Hapus</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="td-no">15</td>
+                                    <td class="td-name">
+                                        <span class="td-cat-icon td-cat-icon--jajanan"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></span>
+                                        <span>Sate Kalong</span>
+                                    </td>
+                                    <td><span class="badge badge-jajanan">Jajanan</span></td>
+                                    <td>Daging Sapi</td>
+                                    <td>Kota Cirebon</td>
+                                    <td class="td-price">Rp 15.000</td>
+                                    <td><span class="status status-aktif">Aktif</span></td>
+                                    <td class="td-aksi">
+                                        <a href="#" class="btn-edit"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> Edit</a>
+                                        <a href="#" class="btn-hapus"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg> Hapus</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="td-no">16</td>
+                                    <td class="td-name">
+                                        <span class="td-cat-icon td-cat-icon--berkuah"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 12c0-2.21 1.79-4 4-4s4 1.79 4 4"/><line x1="12" y1="16" x2="12" y2="12"/></svg></span>
+                                        <span>Coto Sapi Cirebon</span>
+                                    </td>
+                                    <td><span class="badge badge-berkuah">Berkuah</span></td>
+                                    <td>Jeroan Sapi</td>
+                                    <td>Kab. Cirebon</td>
+                                    <td class="td-price">Rp 28.000</td>
+                                    <td><span class="status status-nonaktif">Nonaktif</span></td>
+                                    <td class="td-aksi">
+                                        <a href="#" class="btn-edit"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> Edit</a>
+                                        <a href="#" class="btn-hapus"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg> Hapus</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="td-no">17</td>
+                                    <td class="td-name">
+                                        <span class="td-cat-icon td-cat-icon--berkuah"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 12c0-2.21 1.79-4 4-4s4 1.79 4 4"/><line x1="12" y1="16" x2="12" y2="12"/></svg></span>
+                                        <span>Lontong Sayur</span>
+                                    </td>
+                                    <td><span class="badge badge-berkuah">Berkuah</span></td>
+                                    <td>Lontong + Sayur</td>
+                                    <td>Kota Cirebon</td>
+                                    <td class="td-price">Rp 13.000</td>
+                                    <td><span class="status status-aktif">Aktif</span></td>
+                                    <td class="td-aksi">
+                                        <a href="#" class="btn-edit"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> Edit</a>
+                                        <a href="#" class="btn-hapus"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg> Hapus</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="td-no">18</td>
+                                    <td class="td-name">
+                                        <span class="td-cat-icon td-cat-icon--jajanan"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></span>
+                                        <span>Comro Cirebon</span>
+                                    </td>
+                                    <td><span class="badge badge-jajanan">Jajanan</span></td>
+                                    <td>Oncom + Singkong</td>
+                                    <td>Kab. Cirebon</td>
+                                    <td class="td-price">Rp 3.000</td>
+                                    <td><span class="status status-aktif">Aktif</span></td>
+                                    <td class="td-aksi">
+                                        <a href="#" class="btn-edit"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> Edit</a>
+                                        <a href="#" class="btn-hapus"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg> Hapus</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="td-no">19</td>
+                                    <td class="td-name">
+                                        <span class="td-cat-icon td-cat-icon--berkuah"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 12c0-2.21 1.79-4 4-4s4 1.79 4 4"/><line x1="12" y1="16" x2="12" y2="12"/></svg></span>
+                                        <span>Garang Asem</span>
+                                    </td>
+                                    <td><span class="badge badge-berkuah">Berkuah</span></td>
+                                    <td>Ayam + Asam Jawa</td>
+                                    <td>Kota Cirebon</td>
+                                    <td class="td-price">Rp 25.000</td>
+                                    <td><span class="status status-aktif">Aktif</span></td>
+                                    <td class="td-aksi">
+                                        <a href="#" class="btn-edit"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> Edit</a>
+                                        <a href="#" class="btn-hapus"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg> Hapus</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="td-no">20</td>
+                                    <td class="td-name">
+                                        <span class="td-cat-icon td-cat-icon--camilan"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></span>
+                                        <span>Surabi Cirebon</span>
+                                    </td>
+                                    <td><span class="badge badge-camilan">Camilan</span></td>
+                                    <td>Tepung Beras</td>
+                                    <td>Kab. Cirebon</td>
+                                    <td class="td-price">Rp 5.000</td>
+                                    <td><span class="status status-aktif">Aktif</span></td>
+                                    <td class="td-aksi">
+                                        <a href="#" class="btn-edit"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> Edit</a>
+                                        <a href="#" class="btn-hapus"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg> Hapus</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="td-no">21</td>
+                                    <td class="td-name">
+                                        <span class="td-cat-icon td-cat-icon--jajanan"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></span>
+                                        <span>Udang Rebon Goreng</span>
+                                    </td>
+                                    <td><span class="badge badge-jajanan">Jajanan</span></td>
+                                    <td>Udang Rebon</td>
+                                    <td>Losari, Cirebon</td>
+                                    <td class="td-price">Rp 12.000</td>
+                                    <td><span class="status status-aktif">Aktif</span></td>
+                                    <td class="td-aksi">
+                                        <a href="#" class="btn-edit"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> Edit</a>
+                                        <a href="#" class="btn-hapus"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg> Hapus</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="td-no">22</td>
+                                    <td class="td-name">
+                                        <span class="td-cat-icon td-cat-icon--nasi"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg></span>
+                                        <span>Nasi Goreng Hitam</span>
+                                    </td>
+                                    <td><span class="badge badge-nasi">Nasi</span></td>
+                                    <td>Nasi + Cumi</td>
+                                    <td>Kota Cirebon</td>
+                                    <td class="td-price">Rp 30.000</td>
+                                    <td><span class="status status-aktif">Aktif</span></td>
+                                    <td class="td-aksi">
+                                        <a href="#" class="btn-edit"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> Edit</a>
+                                        <a href="#" class="btn-hapus"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg> Hapus</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="td-no">23</td>
+                                    <td class="td-name">
+                                        <span class="td-cat-icon td-cat-icon--minuman"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="16" y2="6"/><path d="M5 6l1 14h12l1-14"/><path d="M12 6v4m-2-2h4"/></svg></span>
+                                        <span>Bajigur Cirebon</span>
+                                    </td>
+                                    <td><span class="badge badge-minuman">Minuman</span></td>
+                                    <td>Santan + Jahe</td>
+                                    <td>Kab. Cirebon</td>
+                                    <td class="td-price">Rp 7.000</td>
+                                    <td><span class="status status-aktif">Aktif</span></td>
+                                    <td class="td-aksi">
+                                        <a href="#" class="btn-edit"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> Edit</a>
+                                        <a href="#" class="btn-hapus"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg> Hapus</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="td-no">24</td>
+                                    <td class="td-name">
+                                        <span class="td-cat-icon td-cat-icon--minuman"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="16" y2="6"/><path d="M5 6l1 14h12l1-14"/><path d="M12 6v4m-2-2h4"/></svg></span>
+                                        <span>Es Kopyor Cirebon</span>
+                                    </td>
+                                    <td><span class="badge badge-minuman">Minuman</span></td>
+                                    <td>Kelapa Kopyor</td>
+                                    <td>Kota Cirebon</td>
+                                    <td class="td-price">Rp 10.000</td>
+                                    <td><span class="status status-aktif">Aktif</span></td>
+                                    <td class="td-aksi">
+                                        <a href="#" class="btn-edit"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> Edit</a>
+                                        <a href="#" class="btn-hapus"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg> Hapus</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="td-no">25</td>
+                                    <td class="td-name">
+                                        <span class="td-cat-icon td-cat-icon--camilan"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></span>
+                                        <span>Kue Gapit</span>
+                                    </td>
+                                    <td><span class="badge badge-camilan">Camilan</span></td>
+                                    <td>Tepung + Gula</td>
+                                    <td>Kota Cirebon</td>
+                                    <td class="td-price">Rp 15.000</td>
+                                    <td><span class="status status-aktif">Aktif</span></td>
+                                    <td class="td-aksi">
+                                        <a href="#" class="btn-edit"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> Edit</a>
+                                        <a href="#" class="btn-hapus"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg> Hapus</a>
+                                    </td>
+                                </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="table-footer">
+                    <span class="table-info">Menampilkan 1 – 25 dari 25 data</span>
+                    <div class="pagination">
+                        <a href="#" class="page-item page-prev">Prev</a>
+                        <a href="#" class="page-item page-active">1</a>
+                        <a href="#" class="page-item">2</a>
+                        <a href="#" class="page-item page-next">Next</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="app-footer">
+            <span>Katalog Kuliner Cirebon &copy; 2026 &mdash; Rasa Nusantara</span>
+            <span>Dibuat dengan HTML &amp; CSS</span>
+        </footer>
+
+    </div>
+</div>
+
+</body>
+</html>

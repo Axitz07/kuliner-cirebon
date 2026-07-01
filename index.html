@@ -3,180 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page - Katalog Kuliner Cirebon</title>
-    <!-- Font Lora dan Inter dari Google Fonts -->
+    <title>Login — Katalog Kuliner Cirebon</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Hubungkan ke stylesheet eksternal -->
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="login-body">
 
-    <!-- ==========================================
-         HALAMAN DASHBOARD
-         (Aktif jika URL berakhiran #dashboard-page)
-         ========================================== -->
-    <div id="dashboard-page" class="page">
-        
-        <!-- Sidebar Menu (Syarat Wajib Tugas PDF) -->
-        <aside class="sidebar">
-            <div class="sidebar-header">
-                <div class="sidebar-logo">
-                    <!-- Menggunakan Gambar JPG Logo yang Anda Kirim -->
-                    <img src="boled great.jpeg" alt="Logo Boled Great" class="img-logo">
-                </div>
-                <h2>Katalog Kuliner<br>Cirebon</h2>
-            </div>
-            
-            <!-- Profil Admin Sesuai Kisi-kisi PDF -->
-            <div class="profile-section">
-                <div class="avatar">
-                    <span>A</span>
-                </div>
-                <div class="profile-text">
-                    <span>Hallo, Admin</span>
-                    <small>Kurator Budaya</small>
-                </div>
-            </div>
+    <div class="login-container">
 
-            <!-- Navigasi Menu Sidebar Sesuai PDF (Teks diubah ke tema Landing Page) -->
-            <nav class="menu">
-                <a href="#dashboard-page" class="active">Beranda</a>
-                <a href="#dashboard-page">Katalog Utama</a>
-                <a href="#dashboard-page">Rekomendasi Kuliner</a>
-                <a href="#dashboard-page">Peta Lokasi Wisata</a>
-                <a href="#dashboard-page">Tentang Kami</a>
-            </nav>
-        </aside>
-
-        <!-- Area Konten Utama -->
-        <div class="main-wrapper">
-            <!-- Topbar Atas -->
-            <header class="topbar">
-                <div class="topbar-title">Beranda Kuliner Cirebon</div>
-                <a href="#login-page" class="btn-logout">Logout</a>
-            </header>
-
-            <!-- Isi Konten Utama (Berubah jadi Landing Page Display Makanan) -->
-            <main class="content">
-                <div class="section-heading">
-                    <p class="badge">Eksplorasi Rasa Nusantara</p>
-                    <h1 class="page-title">Profil & Katalog Kuliner Cirebon</h1>
-                </div>
-
-                <!-- Profil Perusahaan Sesuai Kisi-kisi PDF -->
-                <div class="company-profile-card">
-                    <div class="company-desc">
-                        <h3>BOLED GREAT — Pelestari Kuliner Nusantara</h3>
-                        <p><strong>BOLED GREAT</strong> merupakan entitas budaya yang berfokus pada pelestarian, dokumentasi, dan promosi resep-resep tradisional khas Cirebon. Melalui landing page ini, kami mendokumentasikan nilai sejarah, keunikan cara penyajian, dan kekayaan rempah dari setiap hidangan warisan leluhur.</p>
-                        <p>Berikut adalah tampilan katalog makanan utama Cirebon yang wajib Anda eksplorasi dan cicipi saat berkunjung ke Kota Wali.</p>
-                    </div>
-                </div>
-
-                <!-- Bagian Grid Produk (Display Makanan dengan Sejarah & Lokasi) -->
-                <div class="product-grid">
-                    <!-- Makanan 1: Nasi Jamblang -->
-                    <div class="food-card">
-                        <div class="food-img img-jamblang">
-                            <span class="emoji-icon">🍱</span>
-                        </div>
-                        <div class="food-content">
-                            <span>Hidangan Utama</span>
-                            <h3>Nasi Jamblang</h3>
-                            
-                            <div class="info-block">
-                                <h4>📝 Detail Makanan:</h4>
-                                <p>Nasi pulen yang dibungkus dengan daun jati tua yang memberikan aroma khas, disajikan dengan prasmanan puluhan lauk pauk (sate kentang, paru goreng, cumi hitam, dll).</p>
-                            </div>
-                            <div class="info-block">
-                                <h4>📜 Sejarah Singkat:</h4>
-                                <p>Berasal dari Desa Jamblang, Cirebon Barat. Muncul pada masa kolonial Belanda (1881) sebagai bekal makan para pekerja paksa pembangunan jalan raya Daendels karena daun jati membuat nasi tidak mudah basi.</p>
-                            </div>
-                            <div class="info-block location">
-                                <h4>📍 Lokasi Terkenal:</h4>
-                                <p>Kawasan Pelabuhan Cirebon, Jl. Tentara Pelajar (Nasi Jamblang Mang Dul), & Jl. Cipto.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Makanan 2: Empal Gentong -->
-                    <div class="food-card">
-                        <div class="food-img img-empal">
-                            <span class="emoji-icon">🍲</span>
-                        </div>
-                        <div class="food-content">
-                            <span>Sup Tradisional</span>
-                            <h3>Empal Gentong</h3>
-                            
-                            <div class="info-block">
-                                <h4>📝 Detail Makanan:</h4>
-                                <p>Olahan sup daging, usus, dan babat sapi dengan kuah santan bumbu kuning yang gurih, dimasak menggunakan kayu bakar di dalam periuk tanah liat (gentong).</p>
-                            </div>
-                            <div class="info-block">
-                                <h4>📜 Sejarah Singkat:</h4>
-                                <p>Diciptakan pertama kali pada abad ke-15 di Desa Battembat. Terinspirasi dari gulai Arab dan India yang dibawa pedagang rempah, disesuaikan dengan lidah lokal Cirebon menggunakan bumbu Nusantara.</p>
-                            </div>
-                            <div class="info-block location">
-                                <h4>📍 Lokasi Terkenal:</h4>
-                                <p>Pusat Kuliner Desa Battembat, Jl. Ir. H. Juanda (Kawasan Tengah Tani), Cirebon.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Makanan 3: Tahu Gejrot -->
-                    <div class="food-card">
-                        <div class="food-img img-tahu">
-                            <span class="emoji-icon">🌶️</span>
-                        </div>
-                        <div class="food-content">
-                            <span>Jajanan Legendaris</span>
-                            <h3>Tahu Gejrot</h3>
-                            
-                            <div class="info-block">
-                                <h4>📝 Detail Makanan:</h4>
-                                <p>Potongan tahu pong goreng khas Jatiseeng yang berongga, disiram dengan kuah cairan gula aren, kecap manis, asam jawa, dan ulekan kasar bawang merah serta cabai rawit hijau.</p>
-                            </div>
-                            <div class="info-block">
-                                <h4>📜 Sejarah Singkat:</h4>
-                                <p>Merupakan kuliner legendaris yang lahir dari kawasan pabrik tahu di Desa Jatiseeng, Kecamatan Ciledug sebelum masa kemerdekaan. Cara makannya yang ditusuk lidi menjadi ciri khasnya.</p>
-                            </div>
-                            <div class="info-block location">
-                                <h4>📍 Lokasi Terkenal:</h4>
-                                <p>Sekitar Alun-Alun Kejaksan Cirebon, Pasar Kanoman, dan sentra kuliner Plered.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </main>
-        </div>
-    </div>
-
-
-    <!-- ==========================================
-         HALAMAN LOGIN
-         (Tampil Default - Desain Split 2 Kolom)
-         ========================================== -->
-    <div id="login-page" class="page login-container">
-        
-        <!-- Sisi Kiri (Welcoming Panel bercorak Batik Tradisional) -->
+        <!-- Sisi Kiri -->
         <div class="login-left">
             <div class="welcome-content">
-                <div class="logo-circle-large" style="background: white; border-radius: 50%; padding: 5px; overflow: hidden; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
-                    <!-- Menggunakan Gambar JPG Logo yang Anda Kirim -->
-                    <img src="boled great.jpeg" alt="Logo Boled Great" style="width: 100%; height: 100%; object-fit: contain;">
+                <div class="login-logo-wrap">
+                    <img src="boled great.jpeg" alt="Logo Boled Great" class="login-logo-img">
+                    <div class="login-logo-text">
+                        <span class="login-brand-main">Rasa Nusantara</span>
+                        <span class="login-brand-sub">Katalog Kuliner Cirebon</span>
+                    </div>
                 </div>
-                <h1>BOLED <span>GREAT</span></h1>
-                <p class="subtitle">Gerbang akses dokumentasi sejarah, resep, dan peta lokasi kuliner legendaris khas Cirebon.</p>
+
+                <h1 class="login-heading">Dokumentasi<br><span>Kuliner Cirebon</span></h1>
+                <p class="subtitle">
+                    Gerbang akses dokumentasi sejarah, resep,
+                    dan peta lokasi kuliner legendaris khas Cirebon.
+                </p>
+
                 <div class="feature-list">
-                    <div class="feature-item">Katalog sejarah & literasi kuliner lokal</div>
+                    <div class="feature-item">Katalog sejarah &amp; literasi kuliner lokal</div>
                     <div class="feature-item">Rekomendasi tempat makan autentik</div>
                     <div class="feature-item">Panduan resep warisan leluhur</div>
                 </div>
             </div>
         </div>
 
-        <!-- Sisi Kanan (Form Input) -->
+        <!-- Sisi Kanan -->
         <div class="login-right">
             <div class="login-box">
                 <div class="logo-section">
@@ -184,23 +46,22 @@
                     <p>Masuk untuk menjelajahi ensiklopedia kuliner</p>
                 </div>
 
-                <form action="#dashboard-page" class="login-form">
+                <form class="login-form" action="dashboard.html">
                     <div class="form-group">
-                        <label>Username</label>
+                        <label for="username">Username</label>
                         <div class="input-wrapper">
-                            <input type="text" placeholder="Masukkan username admin" required>
+                            <input type="text" id="username" placeholder="Masukkan username" required>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label>Password</label>
+                        <label for="password">Password</label>
                         <div class="input-wrapper">
-                            <input type="password" placeholder="Masukkan password" required>
+                            <input type="password" id="password" placeholder="Masukkan password" required>
                         </div>
                     </div>
 
-                    <!-- Tombol Login mengarahkan langsung ke halaman dashboard -->
-                    <button type="submit" class="btn-login" onclick="window.location.href='#dashboard-page'; return false;">Masuk</button>
+                    <button type="submit" class="btn-login">Masuk ke Dashboard</button>
                 </form>
 
                 <div class="login-footer">
@@ -211,6 +72,7 @@
                 </div>
             </div>
         </div>
+
     </div>
 
 </body>
