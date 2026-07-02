@@ -22,10 +22,10 @@
    SIDEBAR
    ============================================ */
 .sidebar {
+    /* Semua property sidebar ada di section SIDEBAR COLLAPSIBLE di bawah */
     background: linear-gradient(180deg, var(--primary) 0%, #3a2410 100%);
     display: flex;
     flex-direction: column;
-    /* positioning diatur oleh .sidebar-toggle-input:checked di bawah */
 }
 
 /* Header */
@@ -197,8 +197,9 @@
 
 .topbar-left {
     display: flex;
-    flex-direction: column;
-    gap: 2px;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.75rem;
 }
 
 .topbar-title {
